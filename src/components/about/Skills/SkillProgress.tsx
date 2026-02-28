@@ -6,6 +6,10 @@ export default function SkillProgress({ level }: { level: number }): JSX.Element
   return (
     <Box sx={{ mt: "0.25rem" }}>
       <Box
+        role="progressbar"
+        aria-valuenow={level}
+        aria-valuemin={0}
+        aria-valuemax={100}
         sx={{
           height: 5,
           borderRadius: 99,

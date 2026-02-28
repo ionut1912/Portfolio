@@ -31,7 +31,7 @@ export function JourneySection({ paragraphs }: JourneySectionProps): JSX.Element
             backgroundClip: "text",
           }}
         >
-          precision &amp; passion.
+          precision & passion.
         </Box>
       </Box>
 

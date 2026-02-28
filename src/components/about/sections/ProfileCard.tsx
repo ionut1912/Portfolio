@@ -73,6 +73,9 @@ export function ProfileCard({ name, title }: ProfileCardProps): JSX.Element {
                 "50%": { opacity: 0.4 },
               },
               animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
+              "@media (prefers-reduced-motion: reduce)": {
+                animation: "none",
+              },
             }}
           />
           <Box

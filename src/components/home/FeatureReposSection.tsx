@@ -35,9 +35,10 @@ export function FeatureReposSection({ topRepos }: ActivityProps): JSX.Element {
             sx={{
               color: (theme) =>
                 theme.palette.mode === "dark" ? CUSTOM_COLORS.slate400 : CUSTOM_COLORS.slate500,
-              mt: "0.5rem",
               fontSize: "0.875rem",
-              m: 0,
+              mt: "0.5rem",
+              mb: 0,
+              mx: 0,
               // Optically aligns the subtitle with the text on desktop (skipping the 3rem line + 1rem gap)
               ml: { xs: 0, sm: "4rem" },
               textAlign: { xs: "center", sm: "left" },
