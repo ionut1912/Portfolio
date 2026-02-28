@@ -1,0 +1,30 @@
+language: "en"
+early_access: true
+
+reviews:
+  auto_review:
+    enabled: true
+    ignore_title_keywords: ["WIP", "DRAFT", "SKIP"]
+
+  path_instructions:
+    # --- GLOBAL ARCHITECT INSTRUCTIONS ---
+    - path: "**" 
+    # This applies to all files to ensure the general "Lead Architect" tone
+      instructions: |
+        You are a Lead Architect. Focus on O-complexity, security (OWASP 2026), 
+        and Clean Architecture / Vertical Slices.
+
+    # --- REACT & TYPESCRIPT (Focusing on the current repo) ---
+    - path: "src/**/*.{ts,tsx,js,jsx}"
+      instructions: |
+        Review for React 19 & Modern Web Standards:
+        - **React 19 Hooks**: Prioritize `useActionState`, `useOptimistic`, and `useFormStatus` for modern, concurrent-safe UI patterns.
+        - **Performance**: Flag non-memoized heavy components; enforce efficient list rendering (check for stable 'key' props).
+        - **State Management**: Favor native React hooks and Context over heavy external libraries unless complexity justifies it.
+        - **Security**: Prevent XSS by validating `dangerouslySetInnerHTML`. Ensure all inputs are controlled or properly sanitized.
+        - **Vite/Build**: Ensure imports are optimized for Tree Shaking. 
+        - **Clean Code**: Enforce "Vertical Slices" — keep your hooks, components, and types related to a single feature within the same folder.
+        - **Accessibility**: Verify ARIA labels and ensure `accessibilityLiveRegion` is used for dynamic content updates.
+
+chat:
+  auto_reply: true
