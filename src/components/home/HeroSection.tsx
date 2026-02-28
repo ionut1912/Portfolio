@@ -2,7 +2,7 @@ import { CUSTOM_COLORS } from "@/data/constants";
 import { Box } from "@mui/material";
 import { HeroButtons } from "./HeroButtons";
 import { MapCard } from "./MapCard";
-import { OpenToWorkBadge } from "./OpenToWorkBadge";
+import { OpenToWorkBadge } from "../shared/OpenToWorkBadge";
 import type { JSX } from "react";
 
 export function HeroSection(): JSX.Element {

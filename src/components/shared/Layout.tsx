@@ -1,5 +1,6 @@
 import { NAV_LINKS } from "@/data/portfolioData";
 import Home from "@/pages/Home";
+import About from "@/pages/About";
 import type { JSX } from "react";
 import { NavLink, Route, Routes, useNavigate } from "react-router-dom";
 import { Footer } from "./Footer";
@@ -37,11 +38,12 @@ export default function Layout(): JSX.Element {
       <main className="flex-1 w-full max-w-[1200px] mx-auto px-6 py-12 md:py-20 flex flex-col gap-16">
         <Routes>
           <Route path="/" element={<Home />} />
-          <Route path="/about" element={<Home />} />
+          <Route path="/about" element={<About />} />
           <Route path="/projects" element={<Home />} />
           <Route path="/contact" element={<Home />} />
         </Routes>
       </main>
+
       <Footer />
     </div>
   );

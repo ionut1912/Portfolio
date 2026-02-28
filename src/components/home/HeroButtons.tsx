@@ -3,15 +3,30 @@ import { Box, Button } from "@mui/material";
 import type { JSX } from "react";
 import { FaCode, FaDownload } from "react-icons/fa";
 
+async function handleDownloadCV() {
+  try {
+    const response = await fetch("/cv.pdf");
+    if (!response.ok) {
+      throw new Error(`Failed to download CV: ${response.status}`);
+    }
+    const blob = await response.blob();
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = "CV Nitescu Ionut.pdf";
+    a.click();
+    URL.revokeObjectURL(url);
+  } catch (error) {
+    console.error("CV download failed:", error);
+  }
+}
 export function HeroButtons(): JSX.Element {
   return (
     <Box sx={{ display: "flex", gap: 2, mt: 1 }}>
       <Button
-        component="a"
-        href="/cv.pdf"
         variant="contained"
-        download="CV Nitescu Ionut.pdf"
         startIcon={<FaDownload />}
+        onClick={handleDownloadCV}
         sx={{
           bgcolor: CUSTOM_COLORS.primary,
           color: CUSTOM_COLORS.bgDark,

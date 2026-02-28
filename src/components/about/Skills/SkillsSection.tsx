@@ -4,6 +4,7 @@ import { CUSTOM_COLORS } from "@/data/constants";
 import { CATEGORIES, SKILLS } from "@/data/skillData";
 import type { Category } from "@/types/skills";
 import { useState, type JSX } from "react";
+import { SectionLabel } from "../../shared/SectionLabel";
 
 export function SkillsSection(): JSX.Element {
   const [active, setActive] = useState<Category>("All");
@@ -12,31 +13,9 @@ export function SkillsSection(): JSX.Element {
 
   return (
     <Box component="section" sx={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-      <Box sx={{ textAlign: "center" }}>
-        <Box
-          component="h2"
-          sx={{
-            fontSize: { xs: "1.875rem", md: "2.25rem" },
-            fontWeight: 700,
-            letterSpacing: "-0.025em",
-            m: 0,
-          }}
-        >
-          My{" "}
-          <Box component="span" sx={{ color: CUSTOM_COLORS.primary }}>
-            Skills
-          </Box>
-        </Box>
-      </Box>
+      <SectionLabel text="My" highlightText="Skills" />
 
-      <Box
-        sx={{
-          display: "flex",
-          justifyContent: "center",
-          gap: "0.5rem",
-          flexWrap: "wrap",
-        }}
-      >
+      <Box sx={{ display: "flex", justifyContent: "center", gap: "0.5rem", flexWrap: "wrap" }}>
         {CATEGORIES.map((cat: Category) => (
           <Chip
             key={cat}
@@ -75,11 +54,7 @@ export function SkillsSection(): JSX.Element {
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: {
-            xs: "1fr",
-            sm: "repeat(2, 1fr)",
-            md: "repeat(3, 1fr)",
-          },
+          gridTemplateColumns: { xs: "1fr", sm: "repeat(2, 1fr)", md: "repeat(3, 1fr)" },
           gap: "1rem",
         }}
       >
