@@ -2,6 +2,7 @@ import { CUSTOM_COLORS } from "@/data/constants";
 import { Box } from "@mui/material";
 import type { JSX } from "react";
 import profileImg from "@/assets/profile.jpeg";
+import { OpenToWorkBadge } from "@/components/shared/OpenToWorkBadge";
 
 interface ProfileCardProps {
   name: string;
@@ -61,35 +62,7 @@ export function ProfileCard({ name, title }: ProfileCardProps): JSX.Element {
       >
         {/* Open to work indicator */}
         <Box sx={{ display: "flex", alignItems: "center", gap: "0.5rem", mb: "0.5rem" }}>
-          <Box
-            component="span"
-            sx={{
-              width: "0.5rem",
-              height: "0.5rem",
-              borderRadius: "9999px",
-              bgcolor: "#22c55e",
-              "@keyframes pulse": {
-                "0%, 100%": { opacity: 1 },
-                "50%": { opacity: 0.4 },
-              },
-              animation: "pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite",
-              "@media (prefers-reduced-motion: reduce)": {
-                animation: "none",
-              },
-            }}
-          />
-          <Box
-            component="span"
-            sx={{
-              color: "rgb(203, 213, 225)",
-              fontSize: "0.7rem",
-              fontWeight: 600,
-              textTransform: "uppercase",
-              letterSpacing: "0.1em",
-            }}
-          >
-            Open to work
-          </Box>
+          <OpenToWorkBadge />
         </Box>
 
         <Box component="h3" sx={{ color: "#fff", fontSize: "1.25rem", fontWeight: 700, m: 0 }}>
