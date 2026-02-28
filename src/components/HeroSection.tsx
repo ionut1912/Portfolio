@@ -1,4 +1,4 @@
-import { CUSTOM_COLORS } from "@/data/contsnts";
+import { CUSTOM_COLORS } from "@/data/constants";
 import { Box } from "@mui/material";
 import { HeroButtons } from "./HeroButtons";
 import { MapCard } from "./MapCard";

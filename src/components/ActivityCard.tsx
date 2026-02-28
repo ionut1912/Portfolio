@@ -106,6 +106,7 @@ export const ActivityCard = ({ activity }: { activity: GitHubRepo }): JSX.Elemen
             href={activity.html_url}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`View ${activity.name} on GitHub`}
             sx={{ display: "flex", alignItems: "center" }}
           >
             <ExternalLink

@@ -1,5 +1,5 @@
 import { ActivityCard } from "@/components/ActivityCard";
-import { CUSTOM_COLORS } from "@/data/contsnts";
+import { CUSTOM_COLORS } from "@/data/constants";
 import type { GitHubRepo } from "@/types/Github";
 import { Box } from "@mui/material";
 import type { JSX } from "react";
@@ -54,7 +54,7 @@ export function RecentActivitySection({ topRepos }: ActivityProps): JSX.Element 
 
         <Box
           component="a"
-          href="#"
+          href="/projects"
           sx={{
             fontSize: "0.875rem",
             fontWeight: 500,

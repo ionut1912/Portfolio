@@ -1,5 +1,5 @@
 import { Box, Typography, Link, Container } from "@mui/material";
-import { Twitter, Linkedin, Github } from "lucide-react";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
 import type { JSX } from "react";
 
 export function Footer(): JSX.Element {
@@ -37,7 +37,7 @@ export function Footer(): JSX.Element {
 
         <Box sx={{ display: "flex", alignItems: "center", gap: 4 }}>
           <Link
-            href="#"
+            href="https://www.linkedin.com/in/nitescu-cornel-ionut-452696279/"
             underline="none"
             sx={{
               display: "flex",
@@ -49,33 +49,14 @@ export function Footer(): JSX.Element {
               "&:hover": { color: "var(--color-primary)" },
             }}
           >
-            <Twitter size={18} />
-            <Typography component="span" sx={{ fontSize: "inherit", fontWeight: 500 }}>
-              Twitter
-            </Typography>
-          </Link>
-
-          <Link
-            href="#"
-            underline="none"
-            sx={{
-              display: "flex",
-              alignItems: "center",
-              gap: 1,
-              color: "rgb(148, 163, 184)",
-              fontSize: "0.875rem",
-              transition: "all 0.2s",
-              "&:hover": { color: "var(--color-primary)" },
-            }}
-          >
-            <Linkedin size={18} />
+            <FaLinkedin size={18} />
             <Typography component="span" sx={{ fontSize: "inherit", fontWeight: 500 }}>
               LinkedIn
             </Typography>
           </Link>
 
           <Link
-            href="#"
+            href="https://github.com/ionut1912"
             underline="none"
             sx={{
               display: "flex",
@@ -87,7 +68,7 @@ export function Footer(): JSX.Element {
               "&:hover": { color: "var(--color-primary)" },
             }}
           >
-            <Github size={18} />
+            <FaGithub size={18} />
             <Typography component="span" sx={{ fontSize: "inherit", fontWeight: 500 }}>
               GitHub
             </Typography>

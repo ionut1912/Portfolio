@@ -5,17 +5,24 @@ import { StatsSection } from "@/components/StatsSection";
 import axios from "axios";
 import { useState, useEffect, type JSX } from "react";
 import { SkillsSection } from "@/components/SkillsSection";
+import type { GitHubRepo } from "@/types/Github";
 
 export default function Home(): JSX.Element {
-  const [topRepos, setTopRepos] = useState([]);
-  const [repos, setRepos] = useState([]);
+  const [topRepos, setTopRepos] = useState<GitHubRepo[]>([]);
+  const [repos, setRepos] = useState<GitHubRepo[]>([]);
   useEffect(() => {
     async function fetchRepos() {
-      const { data } = await axios.get("https://api.github.com/users/ionut1912/repos?sort=pushed");
-      setRepos(data);
-      setTopRepos(data.slice(0, 3));
+      try {
+        const { data } = await axios.get(
+          "https://api.github.com/users/ionut1912/repos?sort=pushed"
+        );
+        setRepos(data);
+        setTopRepos(data.slice(0, 3));
+      } catch {
+        setRepos([]);
+        setTopRepos([]);
+      }
     }
-
     void fetchRepos();
   }, []);
   return (

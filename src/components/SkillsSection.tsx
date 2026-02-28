@@ -1,6 +1,6 @@
 import { Box, Chip } from "@mui/material";
 import SkillCard from "./SkillCard";
-import { CUSTOM_COLORS } from "@/data/contsnts";
+import { CUSTOM_COLORS } from "@/data/constants";
 import { CATEGORIES, SKILLS } from "@/data/skillData";
 import type { Category } from "@/types/skills";
 import { useState, type JSX } from "react";

@@ -31,13 +31,6 @@ export default function Layout(): JSX.Element {
               </NavLink>
             ))}
           </nav>
-
-          <a
-            className="hidden md:flex items-center justify-center px-4 py-2 bg-primary hover:bg-primary/90 text-background-dark text-sm font-bold rounded-lg transition-all shadow-nav"
-            href="mailto:hello@alexdev.com"
-          >
-            Get in Touch
-          </a>
         </div>
       </header>
 
