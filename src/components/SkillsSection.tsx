@@ -12,7 +12,6 @@ export function SkillsSection(): JSX.Element {
 
   return (
     <Box component="section" sx={{ display: "flex", flexDirection: "column", gap: "2.5rem" }}>
-      {/* Heading */}
       <Box sx={{ textAlign: "center" }}>
         <Box
           component="h2"
@@ -24,13 +23,12 @@ export function SkillsSection(): JSX.Element {
           }}
         >
           My{" "}
-          <Box component="span" sx={{ color: "#3b82f6" }}>
+          <Box component="span" sx={{ color: CUSTOM_COLORS.primary }}>
             Skills
           </Box>
         </Box>
       </Box>
 
-      {/* Category filter */}
       <Box
         sx={{
           display: "flex",
@@ -52,9 +50,9 @@ export function SkillsSection(): JSX.Element {
               transition: "all 0.2s ease",
               ...(active === cat
                 ? {
-                    bgcolor: "#2563eb",
+                    bgcolor: CUSTOM_COLORS.primaryDark,
                     color: "#fff",
-                    "&:hover": { bgcolor: "#1d4ed8" },
+                    "&:hover": { bgcolor: CUSTOM_COLORS.primaryDarker },
                   }
                 : {
                     bgcolor: "transparent",
@@ -74,7 +72,6 @@ export function SkillsSection(): JSX.Element {
         ))}
       </Box>
 
-      {/* Grid */}
       <Box
         sx={{
           display: "grid",

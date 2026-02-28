@@ -13,18 +13,17 @@ export default function SkillCard({ skill }: { skill: Skill }): JSX.Element {
         gap: "0.75rem",
         p: "1.25rem 1.5rem",
         borderRadius: "1rem",
-        bgcolor: "#1a1d24",
+        bgcolor: CUSTOM_COLORS.cardBg,
         border: "1px solid",
         borderColor: "rgba(255,255,255,0.05)",
         boxShadow: "none",
         transition: "transform 0.2s ease, border-color 0.2s ease",
         "&:hover": {
           transform: "translateY(-2px)",
-          borderColor: "rgba(59,130,246,0.4)",
+          borderColor: `${CUSTOM_COLORS.primary}66`,
         },
       }}
     >
-      {/* Icon + Name */}
       <Box sx={{ display: "flex", alignItems: "center", gap: "0.625rem" }}>
         <Box
           sx={{
@@ -50,7 +49,6 @@ export default function SkillCard({ skill }: { skill: Skill }): JSX.Element {
         </Box>
       </Box>
 
-      {/* Progress bar */}
       <Box>
         <Box
           sx={{
@@ -65,7 +63,7 @@ export default function SkillCard({ skill }: { skill: Skill }): JSX.Element {
               height: "100%",
               width: `${skill.level}%`,
               borderRadius: 99,
-              background: "linear-gradient(90deg, #2563eb, #3b82f6)",
+              background: `linear-gradient(90deg, ${CUSTOM_COLORS.primaryDark}, ${CUSTOM_COLORS.primary})`,
               transition: "width 0.6s cubic-bezier(0.4,0,0.2,1)",
             }}
           />

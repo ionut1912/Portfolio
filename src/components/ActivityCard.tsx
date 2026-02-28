@@ -3,8 +3,11 @@ import { Box, Typography, Card, CardContent } from "@mui/material";
 import type { JSX } from "react";
 import { VscGitCommit } from "react-icons/vsc";
 import { LuExternalLink } from "react-icons/lu";
+
 function getTimeAgo(date: string): string {
-  const diff = Date.now() - new Date(date).getTime();
+  const parsed = new Date(date);
+  if (isNaN(parsed.getTime())) return "Unknown";
+  const diff = Date.now() - parsed.getTime();
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
   if (days === 0) return "Today";
   if (days === 1) return "Yesterday";

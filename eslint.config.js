@@ -12,9 +12,9 @@ export default tseslint.config(
     languageOptions: {
       ecmaVersion: 'latest',
       globals: globals.browser,
-      parser: tseslint.parser, // Explicitly tell ESLint to use the TS parser
+      parser: tseslint.parser,
       parserOptions: {
-        projectService: true, // Modern way to handle type information in v8/v9
+        projectService: true, 
         tsconfigRootDir: import.meta.dirname,
         ecmaFeatures: { jsx: true },
       },

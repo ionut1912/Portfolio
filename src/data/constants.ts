@@ -1,11 +1,13 @@
 import type { SxProps, Theme } from "@mui/material";
 
 export const CUSTOM_COLORS = {
-  primary: "#3b82f6", // Replace with your exact 'primary' hex
-  bgDark: "#020617", // Replace with your exact 'background-dark' hex
-  bgLight: "#ffffff", // Replace with your exact 'background-light' hex
+  primary: "#3b82f6",
+  primaryDark: "#2563eb",
+  primaryDarker: "#1d4ed8",
+  bgDark: "#020617",
+  bgLight: "#ffffff",
+  cardBg: "#1a1d24",
 
-  // Standard Tailwind Slate Palette (already matched to your original code)
   slate100: "#f1f5f9",
   slate200: "#e2e8f0",
   slate400: "#94a3b8",

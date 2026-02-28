@@ -24,7 +24,7 @@ function useLocalTime(timezone: string) {
   const [time, setTime] = useState(format);
 
   useEffect(() => {
-    const id = setInterval(() => setTime(format), 1000);
+    const id = setInterval(() => setTime(format()), 1000);
     return () => clearInterval(id);
   }, [format]);
 
