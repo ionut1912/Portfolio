@@ -1,0 +1,58 @@
+import type { Category, Skill } from "@/types/skills";
+import {
+  SiHtml5,
+  SiCss3,
+  SiJavascript,
+  SiReact,
+  SiTailwindcss,
+  SiTypescript,
+  SiBootstrap,
+  SiGithubactions,
+  SiRedux,
+  SiDotnet,
+  SiPostgresql,
+  SiMysql,
+  SiDocker,
+  SiMongodb,
+  SiAngular,
+  SiPostman,
+  SiJira,
+  SiGithub,
+  SiGitlab,
+  SiClaude,
+} from "react-icons/si";
+import { VscVscode, VscAzureDevops, VscAzure, VscCopilot } from "react-icons/vsc";
+import { BiData } from "react-icons/bi";
+import { DiVisualstudio } from "react-icons/di";
+export const SKILLS: Skill[] = [
+  { name: "HTML", level: 100, category: "Frontend", Icon: SiHtml5, color: "#e34f26" },
+  { name: "CSS", level: 60, category: "Frontend", Icon: SiCss3, color: "#1572b6" },
+  { name: "Bootstrap", level: 70, category: "Frontend", Icon: SiBootstrap, color: "#563d7c" },
+  { name: "Angular", level: 50, category: "Frontend", Icon: SiAngular, color: "#dd0031" },
+  { name: "C#", level: 70, category: "Backend", Icon: SiDotnet, color: "#9b59d0" },
+  { name: "JavaScript", level: 60, category: "Frontend", Icon: SiJavascript, color: "#f7df1e" },
+  { name: "React", level: 75, category: "Frontend", Icon: SiReact, color: "#61dafb" },
+  { name: "Tailwind CSS", level: 55, category: "Frontend", Icon: SiTailwindcss, color: "#06b6d4" },
+  { name: "TypeScript", level: 80, category: "Frontend", Icon: SiTypescript, color: "#3178c6" },
+  { name: "Redux", level: 60, category: "Frontend", Icon: SiRedux, color: "#764abc" },
+  { name: "MongoDB", level: 75, category: "Database", Icon: SiMongodb, color: "#47a248" },
+  { name: "PostgreSQL", level: 75, category: "Database", Icon: SiPostgresql, color: "#336791" },
+  { name: "MySQL", level: 75, category: "Database", Icon: SiMysql, color: "#4479a1" },
+  { name: "pgAdmin", level: 85, category: "Tools", Icon: BiData, color: "#336791" },
+  { name: "Git/GitHub", level: 85, category: "Tools", Icon: SiGithub, color: "#ffffff" },
+  { name: "GitLab", level: 80, category: "Tools", Icon: SiGitlab, color: "#fc6d26" },
+  { name: "VS Code", level: 90, category: "Tools", Icon: VscVscode, color: "#007acc" },
+  { name: "Visual Studio", level: 75, category: "Tools", Icon: DiVisualstudio, color: "#5c2d91" },
+  { name: "Postman", level: 70, category: "Tools", Icon: SiPostman, color: "#ff6c37" },
+  { name: "Docker", level: 60, category: "Tools", Icon: SiDocker, color: "#2496ed" },
+  { name: "Jira", level: 70, category: "Tools", Icon: SiJira, color: "#0052cc" },
+  { name: "Azure DevOps", level: 75, category: "Tools", Icon: VscAzureDevops, color: "#0078d4" },
+  { name: "Azure", level: 80, category: "Tools", Icon: VscAzure, color: "#0078d4" },
+  { name: "GitHub Actions", level: 70, category: "Tools", Icon: SiGithubactions, color: "#2088ff" },
+  { name: "GitHub Copilot", level: 80, category: "Tools", Icon: VscCopilot, color: "#2088ff" },
+  { name: "Claude AI", level: 80, category: "Tools", Icon: SiClaude, color: "#2088ff" },
+  { name: "Asp.Net Core", level: 65, category: "Backend", Icon: SiDotnet, color: "#9b59d0" },
+  { name: "Entity Framework", level: 70, category: "Backend", Icon: SiDotnet, color: "#9b59d0" },
+];
+
+export const CATEGORIES: Category[] = ["All", "Frontend", "Backend", "Database", "Tools"];
