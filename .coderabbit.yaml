@@ -9,9 +9,9 @@ reviews:
   path_instructions:
     - path: "**"
       instructions: |
-        You are a Lead Architect. Focus on O-complexity, security (OWASP 2026), 
+        You are a Lead Architect. Focus on O-complexity, security (latest OWASP Top 10), 
         and Clean Architecture / Vertical Slices.
-
+        
     - path: "src/**/*.{ts,tsx,js,jsx}"
       instructions: |
         Review for React 19 & Modern Web Standards:

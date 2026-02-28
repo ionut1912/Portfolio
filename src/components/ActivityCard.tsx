@@ -1,8 +1,8 @@
 import type { GitHubRepo } from "@/types/Github";
 import { Box, Typography, Card, CardContent } from "@mui/material";
-import { GitCommit, ExternalLink } from "lucide-react";
 import type { JSX } from "react";
-
+import { VscGitCommit } from "react-icons/vsc";
+import { LuExternalLink } from "react-icons/lu";
 function getTimeAgo(date: string): string {
   const diff = Date.now() - new Date(date).getTime();
   const days = Math.floor(diff / (1000 * 60 * 60 * 24));
@@ -36,7 +36,7 @@ export const ActivityCard = ({ activity }: { activity: GitHubRepo }): JSX.Elemen
       <CardContent sx={{ p: 3, flexGrow: 1, display: "flex", flexDirection: "column" }}>
         <Box sx={{ display: "flex", alignItems: "center", justifyContent: "space-between", mb: 2 }}>
           <Box sx={{ display: "flex", alignItems: "center", gap: 1, color: "rgb(148, 163, 184)" }}>
-            <GitCommit size={16} />
+            <VscGitCommit size={16} />
             <Typography sx={{ fontFamily: "monospace", fontSize: "0.75rem", opacity: 0.8 }}>
               {activity.name}
             </Typography>
@@ -109,7 +109,7 @@ export const ActivityCard = ({ activity }: { activity: GitHubRepo }): JSX.Elemen
             aria-label={`View ${activity.name} on GitHub`}
             sx={{ display: "flex", alignItems: "center" }}
           >
-            <ExternalLink
+            <LuExternalLink
               className="external-icon"
               size={18}
               style={{

@@ -1,7 +1,7 @@
 import { CUSTOM_COLORS } from "@/data/constants";
 import { Box, Button } from "@mui/material";
-import { Download, Code } from "lucide-react";
 import type { JSX } from "react";
+import { FaCode, FaDownload } from "react-icons/fa";
 
 export function HeroButtons(): JSX.Element {
   return (
@@ -11,7 +11,7 @@ export function HeroButtons(): JSX.Element {
         href="/cv.pdf"
         variant="contained"
         download="CV Nitescu Ionut.pdf"
-        startIcon={<Download />}
+        startIcon={<FaDownload />}
         sx={{
           bgcolor: CUSTOM_COLORS.primary,
           color: CUSTOM_COLORS.bgDark,
@@ -31,7 +31,7 @@ export function HeroButtons(): JSX.Element {
         target="_blank"
         rel="noopener noreferrer"
         variant="contained"
-        startIcon={<Code />}
+        startIcon={<FaCode />}
         sx={{
           bgcolor: CUSTOM_COLORS.slate800,
           color: CUSTOM_COLORS.bgLight,
