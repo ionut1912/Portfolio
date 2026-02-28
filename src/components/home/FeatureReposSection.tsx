@@ -1,13 +1,15 @@
-import { ActivityCard } from "@/components/ActivityCard";
 import { CUSTOM_COLORS } from "@/data/constants";
 import type { GitHubRepo } from "@/types/Github";
 import { Box } from "@mui/material";
 import type { JSX } from "react";
+import { SectionLabel } from "../shared/SectionLabel";
+import { ReposCard } from "../shared/ReposCard";
+
 interface ActivityProps {
   topRepos: GitHubRepo[];
 }
 
-export function RecentActivitySection({ topRepos }: ActivityProps): JSX.Element {
+export function FeatureReposSection({ topRepos }: ActivityProps): JSX.Element {
   return (
     <Box component="section" sx={{ display: "flex", flexDirection: "column", gap: "2rem" }}>
       {/* Section header */}
@@ -15,37 +17,30 @@ export function RecentActivitySection({ topRepos }: ActivityProps): JSX.Element 
         sx={{
           display: "flex",
           flexDirection: { xs: "column", sm: "row" },
-          alignItems: { sm: "flex-end" },
+          alignItems: { xs: "center", sm: "flex-end" }, // Centers on mobile, aligns bottom on desktop
           justifyContent: "space-between",
-          gap: "1rem",
+          gap: "1.5rem",
           borderBottom: "1px solid",
           borderColor: (theme) =>
             theme.palette.mode === "dark" ? CUSTOM_COLORS.slate800 : CUSTOM_COLORS.slate200,
           pb: "1rem",
         }}
       >
-        <Box>
-          <Box
-            component="h2"
-            sx={{
-              fontSize: "1.5rem",
-              fontWeight: 700,
-              display: "flex",
-              alignItems: "center",
-              gap: "0.5rem",
-              m: 0,
-            }}
-          >
-            Most Featured Repos
-          </Box>
+        <Box sx={{ display: "flex", flexDirection: "column", alignItems: { xs: "center" } }}>
+          {/* We just call SectionLabel directly now! */}
+          <SectionLabel text="Most" highlightText="featured repos" />
+
           <Box
             component="p"
             sx={{
               color: (theme) =>
                 theme.palette.mode === "dark" ? CUSTOM_COLORS.slate400 : CUSTOM_COLORS.slate500,
-              mt: "0.25rem",
+              mt: "0.5rem",
               fontSize: "0.875rem",
               m: 0,
+              // Optically aligns the subtitle with the text on desktop (skipping the 3rem line + 1rem gap)
+              ml: { xs: 0, sm: "4rem" },
+              textAlign: { xs: "center", sm: "left" },
             }}
           >
             Latest repos from GitHub
@@ -80,7 +75,7 @@ export function RecentActivitySection({ topRepos }: ActivityProps): JSX.Element 
         }}
       >
         {topRepos.map((repo) => (
-          <ActivityCard key={repo.id} activity={repo} />
+          <ReposCard key={repo.id} repo={repo} />
         ))}
       </Box>
     </Box>

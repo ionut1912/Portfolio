@@ -1,25 +1,23 @@
 import { Box } from "@mui/material";
-import { HeroSection } from "@/components/HeroSection";
-import { RecentActivitySection } from "@/components/RecentActivitySection";
-import { StatsSection } from "@/components/StatsSection";
-import axios from "axios";
+import { HeroSection } from "@/components/home/HeroSection";
+import { StatsSection } from "@/components/home/StatsSection";
+import { fetchGitHubRepos } from "../../api/GithubService";
 import { useState, useEffect, type JSX } from "react";
-import { SkillsSection } from "@/components/SkillsSection";
 import type { GitHubRepo } from "@/types/Github";
+import { FeatureReposSection } from "@/components/home/FeatureReposSection";
 
 export default function Home(): JSX.Element {
   const [topRepos, setTopRepos] = useState<GitHubRepo[]>([]);
-  const [repos, setRepos] = useState<GitHubRepo[]>([]);
+  const [reposLength, setReposLength] = useState<number>(0);
   useEffect(() => {
     async function fetchRepos() {
       try {
-        const { data } = await axios.get(
-          "https://api.github.com/users/ionut1912/repos?sort=pushed"
-        );
-        setRepos(data);
+        const response = await fetchGitHubRepos("ionut1912");
+        const data = response.data as GitHubRepo[];
+        setReposLength(data.length);
         setTopRepos(data.slice(0, 3));
       } catch {
-        setRepos([]);
+        setReposLength(0);
         setTopRepos([]);
       }
     }
@@ -42,9 +40,9 @@ export default function Home(): JSX.Element {
         }}
       >
         <HeroSection />
-        <RecentActivitySection topRepos={topRepos} />
-        <StatsSection reposCount={repos.length} />
-        <SkillsSection />
+        <FeatureReposSection topRepos={topRepos} />
+
+        <StatsSection reposCount={reposLength} />
       </Box>
     </Box>
   );
